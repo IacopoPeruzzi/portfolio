@@ -1,0 +1,1316 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Outfit:wght@300;400;500&display=swap');
+
+:root {
+  --bg-color: #030303;
+  --surface-color: rgba(255, 255, 255, 0.03);
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1a6;
+  --accent-color: #ffffff;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --section-padding: 140px 20px;
+  --container-padding: 20px;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin: 0;
+  background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.4) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Specific elegance for normal text */
+p, .cs-body, .expertise-item span {
+  font-weight: 300;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+/* Glass Cards */
+.card {
+  background: var(--surface-color);
+  
+  border: 1px solid var(--glass-border);
+  padding: 45px;
+  border-radius: 12px;
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  letter-spacing: -0.03em;
+}
+
+.section-label {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text-secondary);
+  margin-bottom: 25px;
+  display: block;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  max-width: 1200px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  z-index: 5000;
+  background: #030303 !important;
+  border-radius: 0 0 24px 24px; /* Square top, rounded bottom */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.nav-content {
+  width: 90%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-content div:first-child {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.mobile-toggle, .mobile-menu {
+  display: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+/* Hero */
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.4) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+}
+
+.section {
+  padding: var(--section-padding);
+  border-bottom: 1px solid var(--border-color);
+}
+.tag-list {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 6px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Sticky Header Refinement */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  z-index: 5000;
+  background: #030303 !important;
+  border-bottom: 1px solid var(--border-color);
+  transition: none;
+}
+
+/* Hero Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.hero p {
+  opacity: 0;
+  animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+}
+
+/* Interactive Expertise List */
+.expertise-item {
+  padding: 40px 0;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.4s ease;
+  cursor: default;
+}
+
+.expertise-item:hover {
+  padding-left: 20px;
+  padding-right: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.expertise-item h3 {
+  font-size: 2rem;
+  transition: color 0.4s ease;
+}
+
+.expertise-item:hover h3 {
+  color: var(--accent-color);
+}
+
+.expertise-item span {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  opacity: 0.6;
+}
+
+.expertise-item:hover span {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .expertise-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 30px 0;
+  }
+  
+  .expertise-item h3 {
+    margin-bottom: 5px;
+    font-size: 1.6rem !important;
+  }
+
+  .expertise-item span {
+    font-size: 1rem !important;
+    line-height: 1.4;
+  }
+  
+  .expertise-item:hover {
+    padding-left: 0;
+    padding-right: 0;
+    background: transparent;
+  }
+}
+
+/* Footer & Global links */
+a {
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+  opacity: 1 !important;
+}
+
+.nav-links a:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) { 
+  .grid-4 { grid-template-columns: 1fr 1fr !important; } 
+}
+
+@media (max-width: 600px) { 
+  .grid-4 { grid-template-columns: 1fr !important; } 
+}
+
+.footer, .main-footer {
+  padding: 100px 20px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 100px;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+  .footer, .main-footer {
+    padding: 60px 20px;
+    margin-top: 60px;
+  }
+  
+  .footer-socials {
+    gap: 20px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Process Section Redesign: Industrial Flow */
+.process-flow {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.process-step {
+  display: flex;
+  gap: 60px;
+  padding: 60px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.process-step:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-number {
+  font-family: 'Inter', sans-serif;
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+  transition: all 0.5s ease;
+  flex-shrink: 0;
+  width: 120px;
+}
+
+.process-step:hover .step-number {
+  -webkit-text-stroke: 1px #fff;
+  transform: translateX(10px);
+}
+
+.step-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.step-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.step-content p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.process-step:hover {
+  background: rgba(255, 255, 255, 0.02);
+  padding-left: 30px;
+}
+
+@media (max-width: 768px) {
+  .process-step {
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 0;
+  }
+  
+  .step-number {
+    font-size: 3.5rem;
+    width: auto;
+  }
+  
+  .process-step:hover {
+    padding-left: 0;
+    background: transparent;
+  }
+  
+  .process-step:hover .step-number {
+    transform: none;
+  }
+
+  /* Unified Title Consistency for Mobile */
+  h1, h2, h3, h4, 
+  .hero-title, 
+  .dynamic-title, 
+  .cs-heading,
+  .hero h1 {
+    line-height: 0.95 !important;
+    letter-spacing: -0.05em !important;
+  }
+  :root {
+    --section-padding: 80px 20px;
+  }
+
+  .grid-2, .grid-3 { 
+    grid-template-columns: 1fr; 
+    gap: 40px; 
+  }
+
+  .nav-links { 
+    display: none; 
+  }
+
+  /* Mobile Menu Styles */
+  .mobile-toggle {
+    display: block !important;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 3000; /* Higher than menu */
+    position: relative;
+  }
+  
+  body.is-light .mobile-toggle {
+    color: #030303;
+  }
+
+  .nav-content {
+    width: 90%;
+    padding: 0;
+  }
+
+  .mobile-menu {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #030303;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end; /* Align to the right side */
+    z-index: 4000;
+    opacity: 0;
+    visibility: hidden;
+    gap: 35px; /* Increased distance for better clickability */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-menu a {
+    font-size: 1.8rem !important; 
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    text-align: right;
+    margin-right: 5% !important; /* MATCH THE GUTTER OF THE ICON */
+    background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.5) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+  }
+  
+  .nav-content {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .dynamic-title {
+    font-size: 3.5rem !important;
+    margin-bottom: 40px;
+  }
+
+  .card {
+    padding: 30px !important;
+    min-height: 350px !important;
+  }
+
+  .expertise-item h3 {
+    font-size: 1.4rem;
+  }
+  
+  .cs-heading {
+    font-size: 1.6rem;
+  }
+  
+  .cs-body {
+    font-size: 1rem;
+  }
+}
+
+/* Case Study Specific Styles */
+.case-study-page {
+  padding-top: 80px;
+}
+
+.back-link {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #fff;
+}
+
+.cs-heading {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+.cs-body {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.cs-hero {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cs-hero-header {
+  margin-top: 60px;
+}
+
+.cs-hero-image {
+  margin-top: 60px;
+}
+
+.cs-intro {
+  margin-top: 40px;
+  max-width: 800px;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.cs-tags {
+  margin-top: 40px;
+}
+
+.cs-snapshot {
+  background: #f5f5f7;
+}
+
+.cs-snapshot-grid {
+  gap: 60px;
+}
+
+@media (max-width: 768px) {
+  .cs-hero-header {
+    margin-top: 40px;
+  }
+  
+  .cs-hero-image {
+    margin-top: 30px;
+  }
+  
+  .cs-intro {
+    margin-top: 20px;
+    font-size: 1.1rem;
+  }
+  
+  .cs-tags {
+    margin-top: 30px;
+  }
+  
+  .cs-snapshot-grid {
+    gap: 30px;
+  }
+}
+/* Reveal on Scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Case Study Content Fixes */
+.case-study-page h1,
+.case-study-page h2,
+.case-study-page h3,
+.case-study-page h4,
+.case-study-page .hero-title,
+.case-study-page .cs-heading {
+  background: transparent !important;
+  background-color: transparent !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  color: #030303 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-weight: 800 !important;
+}
+
+body:not(.is-light) .case-study-page:not(.is-light) .hero-title,
+body:not(.is-light) .case-study-page:not(.is-light) .cs-heading {
+   background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.4) 100%) !important;
+}
+
+/* Decisions Cards Override */
+.cs-decision-card {
+  background: transparent !important;
+  border: none !important;
+  border-left: 1px solid rgba(0,0,0,0.1) !important;
+  padding: 30px !important;
+  min-height: auto !important;
+  display: block !important;
+}
+
+.cs-decision-card h4 {
+  color: #030303 !important;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+  margin-bottom: 10px !important;
+}
+
+.cs-decision-card p {
+  color: #424245 !important;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+/* Asymmetric Grid Logic */
+.grid-2 > .card:nth-child(even) {
+  margin-top: 100px;
+}
+
+.grid-3 > .card:nth-child(2) {
+  margin-top: 60px;
+}
+
+.grid-3 > .card:nth-child(3) {
+  margin-top: 120px;
+}
+
+@media (max-width: 768px) {
+  .grid-2 > .card:nth-child(even),
+  .grid-3 > .card:nth-child(2),
+  .grid-3 > .card:nth-child(3) {
+    margin-top: 0;
+  }
+}
+
+/* Bold Section Titles */
+.dynamic-title {
+  font-size: clamp(3rem, 10vw, 8rem) !important;
+  line-height: 0.9;
+  margin-bottom: 80px;
+  max-width: 900px;
+  letter-spacing: -0.05em;
+  background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.3) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Light Mode Sections */
+.section-light {
+  background-color: #ffffff !important;
+  color: #030303 !important;
+  border-bottom: none !important;
+}
+
+.section-light h2, 
+.section-light h3, 
+.section-light .dynamic-title {
+  color: #030303 !important;
+}
+
+.section-light .section-label {
+  color: #86868b !important;
+}
+
+.section-light p {
+  color: #424245 !important;
+}
+
+.section-light .card {
+  background: rgba(0, 0, 0, 0.02) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.04) !important;
+}
+
+.section-light .card:hover {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-8px);
+}
+
+.section-light .tag {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: #86868b !important;
+  background: transparent !important;
+}
+
+/* Antigravity Style Hero Glow */
+.hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  filter: none !important;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  pointer-events: none;
+  animation: glowFloat 15s infinite alternate ease-in-out;
+}
+
+@keyframes glowFloat {
+  0% { transform: translate(-60%, -40%) scale(1); }
+  50% { transform: translate(-40%, -60%) scale(1.1); }
+  100% { transform: translate(-55%, -45%) scale(0.9); }
+}
+
+/* Light Mode Refinements */
+.section-light .dynamic-title {
+  color: #000000 !important;
+}
+
+.section-light .card span {
+  color: #000000 !important;
+  font-weight: 600;
+  opacity: 1;
+}
+
+.section-light .card h3 {
+  color: #000000 !important;
+}
+
+/* Refined Hero Glow - More Visible */
+.hero-glow {
+  background: radial-gradient(circle, rgba(180, 180, 180, 0.12) 0%, transparent 70%) !important;
+  filter: blur(120px) !important;
+  width: 80vw !important;
+  height: 80vw !important;
+}
+
+/* Header Dynamic Light Trace */
+.nav::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: scanLine 8s infinite linear;
+}
+
+@keyframes scanLine {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+.nav-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Puntiform Grid Background */
+.hero-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+/* Floating Particles */
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+  animation: floatParticle 20s infinite linear;
+}
+
+@keyframes floatParticle {
+  0% { transform: translate(0, 0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translate(100px, -100px); opacity: 0; }
+}
+
+.hero-glow { display: none; } /* Rimuovo il glow precedente */
+
+/* Dense Puntiform Grid */
+.hero-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px) !important;
+  background-size: 30px 30px !important;
+}
+
+/* More Intentional Particles */
+.particle {
+  width: 4px !important;
+  height: 4px !important;
+  background: rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.particle.large {
+  width: 6px !important;
+  height: 6px !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Case Study Light Mode */
+.case-study-page {
+  background-color: #ffffff !important;
+  color: #030303 !important;
+  min-height: 100vh;
+}
+
+.case-study-page .cs-heading,
+.case-study-page .hero-title,
+.case-study-page h1, 
+.case-study-page h2, 
+.case-study-page h3, 
+.case-study-page h4 {
+  color: #030303 !important;
+}
+
+.case-study-page p, 
+.case-study-page .cs-body,
+.case-study-page .hero-subtitle,
+.case-study-page .cs-intro {
+  color: #424245 !important;
+}
+
+.case-study-page .section {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.case-study-page .cs-snapshot {
+  background: #f5f5f7 !important;
+}
+
+.case-study-page .back-link {
+  color: #030303 !important;
+}
+
+.case-study-page .tag {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: #86868b !important;
+}
+
+.case-study-page .card {
+  background: rgba(0, 0, 0, 0.02) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: #030303 !important;
+}
+
+/* Global Theme Transitions */
+body {
+  transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1), color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.is-light {
+  background-color: #ffffff !important;
+  color: #030303 !important;
+}
+
+/* Remove header-light and is-light overrides for nav */
+body.is-light .nav-links a,
+body.is-light .mobile-toggle {
+  color: #fff !important;
+}
+
+body.header-light .nav,
+body.header-light .nav-links a,
+body.header-light .mobile-toggle {
+  background: #030303 !important;
+  color: #fff !important;
+}
+
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+body.mobile-menu-open .nav {
+  background: transparent !important;
+  border-bottom: none !important;
+}
+
+body.mobile-menu-open .nav-links a,
+body.mobile-menu-open .mobile-toggle,
+body.mobile-menu-open .nav-content div {
+  color: #FFFFFF !important;
+}
+
+.mobile-toggle svg {
+  display: block;
+}
+
+body.is-light .footer {
+  color: #86868b !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Ensure sections in light mode don't have separate backgrounds when theme is active */
+body.is-light .section-light {
+  background-color: transparent !important;
+}
+
+/* Universal Color Transitions */
+h1, h2, h3, h4, p, span, a, .card, .tag, .section-label, .cs-body {
+  transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+              background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Fix Flash: Sections should be transparent to let Body color show through */
+.section-light {
+  background-color: transparent !important;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+}
+
+/* Precise Light Mode Overrides */
+body.is-light {
+  background-color: #ffffff !important;
+  color: #030303 !important;
+}
+
+body.is-light h1, 
+body.is-light h2, 
+body.is-light h3, 
+body.is-light h4,
+body.is-light .dynamic-title {
+  background: linear-gradient(135deg, #000 0%, rgba(0, 0, 0, 0.4) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+body.is-light p, 
+body.is-light .cs-body,
+body.is-light .section-label,
+body.is-light .expertise-item span {
+  color: #424245 !important;
+}
+
+body.is-light .card {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+body.is-light .tag {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: #86868b !important;
+}
+
+body.is-light .expertise-item {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+body.is-light .expertise-item:hover {
+  background: rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Snappier Transitions (0.4s) */
+body, h1, h2, h3, h4, p, span, a, .card, .tag, .section-label, .cs-body, .nav, .nav-links a {
+  transition: background-color 0.4s cubic-bezier(0.2, 0, 0.2, 1), 
+              color 0.4s cubic-bezier(0.2, 0, 0.2, 1), 
+              border-color 0.4s cubic-bezier(0.2, 0, 0.2, 1) !important;
+}
+
+/* Protective contrast for cards during theme switch */
+.section-light .card {
+  transition: all 0.4s cubic-bezier(0.2, 0, 0.2, 1) !important;
+}
+
+/* If the body is NOT light, but the card is in a section-light, 
+   we keep it readable for a bit longer or give it a subtle dark backing */
+body:not(.is-light) .section-light .card {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+/* Ensure headings in light sections don't vanish during the transition to dark */
+body:not(.is-light) .section-light h2,
+body:not(.is-light) .section-light h3 {
+  color: #ffffff !important;
+}
+
+/* Faster transition specifically for the background to minimize the "ghosting" effect */
+body {
+  transition: background-color 0.3s ease, color 0.4s ease !important;
+}
+
+/* Editorial Project Hero Image */
+.cs-hero-image {
+  margin-top: 80px;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.cs-hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.case-study-page .hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  margin-top: 20px;
+}
+
+.case-study-page .hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.6;
+  margin-top: 15px;
+}
+
+/* Home Project Cards with Images */
+.card-image {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.section-light .card-image {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Immersive Card Styles */
+.card {
+  position: relative;
+  min-height: 400px;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px !important;
+  overflow: hidden;
+  border: none !important;
+  background: #111 !important;
+}
+
+.card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.card-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+
+.section-light .card-overlay {
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%);
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.card:hover .card-bg img {
+  transform: scale(1.1);
+}
+
+.card h3, .card p, .card .tag, .card span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Force White Text on All Cards (regardless of section theme) */
+.card .card-content h3,
+.card .card-content p,
+.card .card-content span,
+.card .card-content .tag {
+  color: #FFFFFF !important;
+  background: none !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+/* Consistent Dark Overlay for All Cards */
+.card-overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%) !important;
+  opacity: 0.8;
+  transition: opacity 0.4s ease;
+}
+
+.card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card .tag {
+  background: rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  
+}
+
+/* Glassmorphism Refinement for Cards */
+.card-content {
+  position: relative;
+  z-index: 2;
+  padding: 25px;
+  margin: -25px; /* Offset the padding to keep text aligned */
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.4s ease;
+}
+
+.card:hover .card-content {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.card-content h3 {
+  color: #FFFFFF !important;
+  font-weight: 500 !important;
+}
+
+.card-content p, 
+.card-content span, 
+.card-content .view-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Ultra-precise white text for card elements */
+.card h3, 
+.card .card-content h3,
+.card p,
+.card .card-content p,
+.card span,
+.card .card-content span,
+.card .view-link {
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+}
+
+.card:hover h3 {
+  color: #FFFFFF !important;
+}
+
+/* Fix for white text in light sections */
+.section-light .card h3,
+.section-light .card p,
+.section-light .card span,
+.section-light .card .client-label,
+.section-light .card .view-link {
+  color: #FFFFFF !important;
+}
+
+/* Remove tag blur and set solid background */
+.card .tag {
+  backdrop-filter: none !important;
+  background: rgba(255,255,255,0.15) !important;
+}
+
+/* FINAL CARD STABILITY RULES */
+.card, .card-content, .card h3, .card p, .card span, .card .tag {
+  color: #FFFFFF !important;
+}
+
+.card-overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%) !important;
+  backdrop-filter: none !important;
+}
+
+.card .tag {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: none !important;
+}
+
+/* Remove any inner box or card-within-card effect */
+.card, 
+.card-content {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Ensure the main card container doesn't show a border either */
+.card {
+  padding: 0 !important;
+  border-radius: 12px;
+}
+
+.card-content {
+  padding: 40px;
+}
