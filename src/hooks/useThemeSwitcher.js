@@ -48,11 +48,21 @@ const useThemeSwitcher = () => {
       }
     };
 
-    window.addEventListener('scroll', checkTheme);
+    let animationFrame;
+    const handleScroll = () => {
+      if (animationFrame) return;
+      animationFrame = window.requestAnimationFrame(() => {
+        checkTheme();
+        animationFrame = undefined;
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     checkTheme();
 
     return () => {
-      window.removeEventListener('scroll', checkTheme);
+      window.removeEventListener('scroll', handleScroll);
+      if (animationFrame) window.cancelAnimationFrame(animationFrame);
       document.body.classList.remove('is-light');
       document.body.classList.remove('header-light');
     };

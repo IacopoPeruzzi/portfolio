@@ -1,14 +1,16 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Strategic Initiatives', href: '#initiatives' },
-    { name: 'Client Projects', href: '#projects' },
-    { name: 'Process', href: '#process' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'About', to: '/about' },
+    { name: 'Strategy', href: '/#initiatives' },
+    { name: 'Selected Work', href: '/#projects' },
+    { name: 'Approach', href: '/#process' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -27,12 +29,12 @@ const Header = () => {
     <>
       <nav className="nav">
         <div className="nav-content">
-          <div style={{fontWeight: 800, letterSpacing: '-0.02em', zIndex: 2000}}>Iacopo Peruzzi's portfolio</div>
+          <Link to="/" className="brand-mark">Iacopo Peruzzi<span> / UX &amp; Service Design</span></Link>
           
           <div className="nav-links">
-            {navLinks.map((link) => (
-              <a key={link.name} href={link.href}>{link.name}</a>
-            ))}
+            {navLinks.map((link) => link.to
+              ? <Link key={link.name} to={link.to}>{link.name}</Link>
+              : <a key={link.name} href={link.href}>{link.name}</a>)}
           </div>
 
           <button className="mobile-toggle" onClick={toggleMenu} aria-label="Toggle menu">
@@ -54,7 +56,9 @@ const Header = () => {
 
       <div className={`mobile-menu ${isOpen ? 'is-open' : ''}`}>
         {navLinks.map((link) => (
-          <a key={link.name} href={link.href} onClick={closeMenu}>{link.name}</a>
+          link.to
+            ? <Link key={link.name} to={link.to} onClick={closeMenu}>{link.name}</Link>
+            : <a key={link.name} href={link.href} onClick={closeMenu}>{link.name}</a>
         ))}
       </div>
     </>

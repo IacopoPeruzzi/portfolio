@@ -178,7 +178,7 @@ export const projects = [
     learnings: "This project reinforced the importance of designing from real constraints. Successful UX depends on understanding hardware limits and the physical context of use."
   },
   {
-    id: "quanta", heroImage: "/assets/projects/zoppas.jpg",   
+    id: "quanta", heroImage: "/assets/projects/zoppas.jpg",
     title: "Quanta Systems",
     subtitle: "Shaping IoT and AI service concepts for medical and aesthetic applications.",
     intro: "For Quanta Systems, the project focused on strategic service design activities aimed at exploring new IoT and AI-driven service opportunities in the medical and aesthetic sectors.",

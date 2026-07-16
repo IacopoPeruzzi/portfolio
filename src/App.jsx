@@ -1,11 +1,12 @@
 
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import useReveal from './hooks/useReveal';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import AboutPage from './components/AboutPage';
+import DesignPrinciples from './components/DesignPrinciples';
 import Expertise from './components/Expertise';
 import StrategicInitiatives from './components/StrategicInitiatives';
 import ClientProjects from './components/ClientProjects';
@@ -22,6 +23,7 @@ const Home = () => {
     <>
       <Hero />
       <About />
+      <DesignPrinciples />
       <Expertise />
       <StrategicInitiatives />
       <ClientProjects />
@@ -40,6 +42,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="/case-study/:id" element={<CaseStudy />} />
           </Routes>
         </main>

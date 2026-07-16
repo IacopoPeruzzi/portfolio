@@ -1,5 +1,4 @@
 
-import React from 'react';
 
 const outcomes = [
   { label: "15+ Projects", desc: "Unified across a single design language and ecosystem." },
